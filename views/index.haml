@@ -1,0 +1,16 @@
+%form{action: '/check', method: 'get'}
+  %select{name: 'period'}
+    %option{value: '01-02/2015'} 104年01-02月
+    %option{value: '11-12/2014'} 103年11-12月
+    %option{value: '09-10/2014'} 103年09-10月
+    %option{value: '07-08/2014'} 103年07-08月
+    %option{value: '05-06/2014'} 103年05-06月
+    %option{value: '03-04/2014'} 103年03-04月
+    %option{value: '01-02/2014'} 103年01-02月
+    %option{value: '11-12/2013'} 102年11-12月
+    %option{value: '09-10/2013'} 102年09-10月
+    %option{value: '07-08/2013'} 102年07-08月
+  %input{type: 'text', name: 'number', placeholder: 'your number here'}
+  %input{type: 'submit'}
+- if @result
+  = "#{@result}"

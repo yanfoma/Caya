@@ -1,0 +1,36 @@
+body{
+  font-family: 'Cyreal';
+}
+.header, .content, .footer{
+  text-align:center;
+}
+.header{
+  background: url(background.png);
+  height:200px;
+  font-weight:bold;
+  font-style:italic;
+}
+.header a{
+  margin-top:4%;
+  font-size:100px;
+  color: white;
+}
+
+.header a:hover{
+  text-decoration:none;
+}
+
+.content{
+  font-weight:bold;
+  margin-top: 12%;
+}
+
+.content p{
+  margin-top: 5%;
+  font-size:50px;
+}
+
+.footer{
+  margin-top:15%;
+  font-size:20px;
+}

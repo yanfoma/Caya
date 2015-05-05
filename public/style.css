@@ -15,21 +15,23 @@ body{
   font-size:100px;
   color: white;
 }
-
 .header a:hover{
   text-decoration:none;
 }
-
 .content{
   font-weight:bold;
-  margin-top: 12%;
+  margin-top: 5%;
 }
-
+.content .description{
+  font-size:25px;
+}
+.content form{
+  margin-top:7%;
+}
 .content p{
   margin-top: 5%;
   font-size:50px;
 }
-
 .footer{
   margin-top:15%;
   font-size:20px;

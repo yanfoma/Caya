@@ -1,4 +1,5 @@
 %div{class: 'description'}
+  台灣統一發票對獎系統 <br/>
   Taiwan eTax Uniform-Invoice Prize Winning Numbers Check
 %form{action: '/check', method: 'get', class: 'form-inline'}
   %div{class: 'form-group'}
@@ -14,8 +15,8 @@
       %option{value: '09-10/2013'} 102年09-10月
       %option{value: '07-08/2013'} 102年07-08月
   %div{class: 'form-group'}
-    %input{type: 'text', name: 'number', class: 'form-control', placeholder: 'Your number here'}
+    %input{type: 'text', name: 'number', class: 'form-control', placeholder: '你的8位數字 ...'} &nbsp; 像 12345678 &nbsp;
   %div{class: 'form-group'}
-    %input{type: 'submit', class: 'btn btn-default', value: 'Submit'}
+    %input{type: 'submit', class: 'btn btn-primary', value: '送出'}
 - if @result
   %p #{@result}

@@ -19,4 +19,8 @@ class Caya < Sinatra::Base
     haml :index
   end
 
+  not_found do
+    'Oops you made a mistake ... right ?'
+  end
+
 end

@@ -10,13 +10,21 @@ class Caya < Sinatra::Base
     haml :index
   end
 
+  get '/single_check' do
+    haml :single_check
+  end
+
+  get '/multi_check' do
+    haml :multi_check
+  end
+
   get '/check' do
     @period = params[:period]
     @number = params[:number]
     if @period && @number
       @result = win?(@period, @number)
     end
-    haml :index
+    haml :single_check
   end
 
   not_found do

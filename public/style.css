@@ -25,6 +25,7 @@ body{
 .content .description{
   font-size:25px;
 }
+
 .content form{
   margin-top:7%;
 }
@@ -32,6 +33,11 @@ body{
   margin-top: 5%;
   font-size:50px;
 }
+
+.content .bg-info{
+  font-size:15px;
+}
+
 .footer{
   margin-top:15%;
   font-size:20px;

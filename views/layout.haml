@@ -11,6 +11,8 @@
     %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'}
     %link{rel: 'stylesheet', href: 'style.css'}
     %link{rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Cyreal'}
+    %script{src: 'https://code.jquery.com/jquery-1.11.3.min.js'}
+    %script{src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'}
     %script
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,10 +26,11 @@
       %div{class: 'container'}
         %div{class: 'col-md-12'}
           %a{href: '/'} Caya
+      = haml :nav
     %div{class: 'content'}
       %div{class: 'container'}
         %div{class: 'col-md-12'}
-          = yield :single_check
+          = yield
     %div{class: 'footer'}
       %div{class: 'container'}
         %div{class: 'col-md-12'}

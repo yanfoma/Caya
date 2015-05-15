@@ -82,5 +82,19 @@ module CheckNumber
     end
     result
   end
-  
+
+  def all_win?(period, numbers)
+    results = {}
+    numbers.each do |number|
+      if win?(period, number) != 'I am sorry, you have no prize'
+        results[number] = win?(period, number)
+      end
+    end
+    results
+  end
+
+#  def number_format(number)
+
+#  end
+
 end

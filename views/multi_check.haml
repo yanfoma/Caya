@@ -1,7 +1,7 @@
 %div{class: 'description'}
   台灣統一發票對獎系統 <br/>
   Multi-Check
-%form{action: '/check', method: 'get', class: 'form-inline'}
+%form{action: '/multi_check', method: 'post', class: 'form-inline'}
   %div{class: 'form-group'}
     %select{name: 'period', class: 'form-control'}
       %option{value: '01-02/2015'} 104年01-02月
@@ -18,5 +18,8 @@
     %textarea{name: 'numbers', rows: '3', class: 'form-control', placeholder: '12345678, 90123456, 78901234, ...'}
   %div{class: 'form-group'}
     %input{type: 'submit', class: 'btn btn-primary', value: '送出'}
+- if @results
+  - @results.each do |x, y|
+    %p #{y} with #{x}
 - if @result
   %p #{@result}

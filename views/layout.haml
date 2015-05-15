@@ -26,14 +26,14 @@
       %div{class: 'container'}
         %div{class: 'col-md-12'}
           %a{href: '/'} Caya
-      = haml :nav
+        = haml :nav
     %div{class: 'content'}
       %div{class: 'container'}
         %div{class: 'col-md-12'}
           = yield
     %div{class: 'footer'}
-      = haml :mobile_nav
       %div{class: 'container'}
+        = haml :mobile_nav
         %div{class: 'col-md-12'}
           Find us on facebook
           %a{href: 'https://www.facebook.com/cayapp'} here

@@ -1,22 +1,3 @@
-%div{class: 'description'}
+%div{class: 'jumbotron description'}
   台灣統一發票對獎系統 <br/>
   Taiwan eTax Uniform-Invoice Prize Winning Numbers Check
-%form{action: '/check', method: 'get', class: 'form-inline'}
-  %div{class: 'form-group'}
-    %select{name: 'period', class: 'form-control'}
-      %option{value: '01-02/2015'} 104年01-02月
-      %option{value: '11-12/2014'} 103年11-12月
-      %option{value: '09-10/2014'} 103年09-10月
-      %option{value: '07-08/2014'} 103年07-08月
-      %option{value: '05-06/2014'} 103年05-06月
-      %option{value: '03-04/2014'} 103年03-04月
-      %option{value: '01-02/2014'} 103年01-02月
-      %option{value: '11-12/2013'} 102年11-12月
-      %option{value: '09-10/2013'} 102年09-10月
-      %option{value: '07-08/2013'} 102年07-08月
-  %div{class: 'form-group'}
-    %input{type: 'text', name: 'number', class: 'form-control', placeholder: '你的8位數字 ...'} &nbsp; 像 12345678 &nbsp;
-  %div{class: 'form-group'}
-    %input{type: 'submit', class: 'btn btn-primary', value: '送出'}
-- if @result
-  %p #{@result}

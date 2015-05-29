@@ -1,7 +1,7 @@
 body{
   font-family: 'Cyreal';
 }
-.header, .content, .footer{
+.header, .content, .footer, li{
   text-align:center;
 }
 .header{
@@ -18,12 +18,28 @@ body{
 .header a:hover{
   text-decoration:none;
 }
+.nav a{
+  font-size:20px;
+}
+ul{
+  margin-left:1%;
+}
+ul li{
+  width:33%;
+}
+ul li a:hover{
+  color: black;
+}
+.mobile_nav ul li{
+  width: 100%;
+}
 .content{
   font-weight:bold;
   margin-top: 5%;
 }
 .content .description{
   font-size:25px;
+  text-align:center;
 }
 .content form{
   margin-top:7%;

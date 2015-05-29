@@ -1,6 +1,6 @@
 require 'yaml'
 
-# TODO: Top-level module documentation
+# Rubocop: Top-level module documentation missing
 module CheckNumber
   def get_numbers_from_period(period)
     all_numbers = YAML.load(File.read('winning_numbers.yml'))
@@ -27,13 +27,19 @@ module CheckNumber
   end
 
   def win_num_prize_worker?(period, number, x)
+    # Given a number, returns an array of [true, false, ...] based on tests
+    # for equality on position x to -1.
     numbers_period = get_numbers_from_period(period)
     numbers_period['First Prize'][0..2].map { |e| e[x..-1] == number[x..-1] }
   end
 
   def win_num_prize?(period, number, a = [])
+    # b: Array of position to test from
+    # => 2nd prize tests from 1, 5th prize tests from 4
     b = [1, 2, 3, 4]
     b.each { |x| a << win_num_prize_worker?(period, number, x) }
+    # a: Array of arrays with results of test for prizes 2 to 5 in that order
+    # => a.find_index returns index of first array that has a true within it
     a.find_index { |i| i.any? { |e| e == true } }
   end
 

@@ -1,6 +1,6 @@
 require_relative 'winning_numbers_scrape'
 
-include Winning_Numbers_Scrape
+include WinningNumbersScrape
 
 data = []
 data = get_data

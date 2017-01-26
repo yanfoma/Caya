@@ -3,6 +3,7 @@ require 'sinatra/base'
 require 'haml'
 require_relative 'check_number'
 
+# Rubocop: Top-level class documentation missing
 class Caya < Sinatra::Base
   include CheckNumber
 
@@ -17,9 +18,7 @@ class Caya < Sinatra::Base
   post '/single_check' do
     @period = params[:period]
     @number = params[:number]
-    if @period && !@number.empty?
-      @result = win?(@period, @number)
-    end
+    @result = win?(@period, @number) if @period && !@number.empty?
     haml :single_check
   end
 
@@ -29,19 +28,13 @@ class Caya < Sinatra::Base
 
   post '/multi_check' do
     @period = params[:period]
-    @numbers = params[:numbers].gsub(/\s+/, "").split(',')
-    if @period && @numbers != []
-      @results = all_win?(@period, @numbers)
-    end
-    if @results == {}
-      @result = 'I am sorry, you have no prize'
-    end
+    @numbers = params[:numbers].gsub(/\s+/, '').split(',')
+    @results = all_win?(@period, @numbers) if @period && @numbers != []
+    @result = 'I am sorry, you have no prize' if @results == {}
     haml :multi_check
   end
-
 
   not_found do
     'Oops you made a mistake ... right ?'
   end
-
 end

@@ -6,13 +6,11 @@
 require 'minitest/autorun'
 require_relative '../winning_numbers_scrape'
 
-include Winning_Numbers_Scrape
+include WinningNumbersScrape
 
 describe 'Getting the eTax winning numbers' do
-
   # 3. Be sure the periods[] is not empty and has 10 elements
   it 'Should give a non empty periods array' do
-    periods = []
     periods = get_period
     periods.wont_be_empty
     periods.length.must_equal 10
@@ -20,7 +18,6 @@ describe 'Getting the eTax winning numbers' do
 
   # 4. Be sure that etax_data[] is not empty
   it 'Should give a non empty etax_data array' do
-    data = []
     data = get_data
     data.wont_be_empty
   end

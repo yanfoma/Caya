@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'open_uri_redirections'
 require 'yaml'
 
 # Rubocop: Top-level module documentation missing
@@ -12,7 +13,7 @@ module WinningNumbersScrape
   LINKS = "#{WINNING_TABLE_PATH}/@href"
 
   # Getting the links of the table for each period
-  mainpage = Nokogiri::HTML(open(MAIN_PAGE))
+  mainpage = Nokogiri::HTML(open(MAIN_PAGE, :allow_redirections => :safe))
   WINNING_TABLE_TEXTS = mainpage.xpath(WINNING_TABLE_PATH)
   WINNING_TABLE_LINKS = mainpage.xpath(LINKS)
 
@@ -32,7 +33,7 @@ module WinningNumbersScrape
     numbers_table = []
     WINNING_TABLE_LINKS.each do |link|
       url = "#{WEBSITE}/#{link}"
-      numberspage = Nokogiri::HTML(open(url))
+      numberspage = Nokogiri::HTML(open(url, :allow_redirections => :safe))
       numbers_table << numberspage.xpath(NUMBERS_TABLE_PATH)
     end
     numbers_table

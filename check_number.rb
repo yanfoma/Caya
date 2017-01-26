@@ -52,7 +52,7 @@ module CheckNumber
   def win?(period, number)
     prize = ['40,000', '10,000', '4,000', '1,000']
     prize_sgp = { 'special' => '2 million', 'grand' => '10 million ' }
-    result = 'I am sorry, you have no prize'
+    result = 'Sorry, you have no prize'
     b = win_num_prize?(period, number)
     c = win_special_grand_prize?(period, number)
     result = 'You win NT$200' if win_sixth_prize?(period, number)
@@ -65,7 +65,7 @@ module CheckNumber
   def all_win?(period, numbers)
     results = {}
     numbers.each do |number|
-      if win?(period, number) != 'I am sorry, you have no prize'
+      if win?(period, number) != 'Sorry, you have no prize'
         results[number] = win?(period, number)
       end
     end
